@@ -1,0 +1,34 @@
+@import '@/styles/__settings.scss';
+
+$transition: all 0.3s ease;
+$mobile: toRem(28);
+$desktop: toRem(40);
+
+.social {
+  height: $mobile;
+  width: $mobile;
+  border-radius: 50%;
+  border: toRem(2) solid $white;
+  display: flex;
+  @include center();
+
+  @include desktop() {
+    height: $desktop;
+    width: $desktop;
+  }
+
+  .icon {
+    color: $white;
+  }
+
+  &:hover {
+    border: toRem(2) solid $hover;
+    cursor: pointer;
+    transition: $transition;
+
+    .icon {
+      color: $hover;
+      transition: $transition;
+    }
+  }
+}
